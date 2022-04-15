@@ -6,6 +6,7 @@ import gpsUtil.location.VisitedLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +22,12 @@ public class GpsService {
     }
 
     public VisitedLocation getUserLocation(UUID userId) {
-        logger.debug("getUserLocation called");
+        logger.info("getUserLocation called");
         return gpsUtil.getUserLocation(userId);
     }
 
     public List<Attraction> getAttractions() {
-        logger.debug("getAttractions called");
+        logger.info("getAttractions called");
         return new ArrayList<Attraction>(gpsUtil.getAttractions());
     }
 
